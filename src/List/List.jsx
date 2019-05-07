@@ -19,7 +19,7 @@ class List extends Component
 		console.log("TEST: " + this.props.quakeArray);
 
 		return this.props.quakeArray.map((earthquake, index) => {
-			return (<li key={index}>In {earthquake.properties.place} at lat/long: {earthquake.geometry.coordinates[1]}, {earthquake.geometry.coordinates[0]} and at a depth of {earthquake.geometry.coordinates[2]} km there is an earthquake with
+			return (<li key={index}>At {earthquake.properties.place} at lat/long: {earthquake.geometry.coordinates[1]}, {earthquake.geometry.coordinates[0]} and at a depth of {earthquake.geometry.coordinates[2]} km there is an earthquake with
 					{
 						earthquake.properties.mag ?
 						` magnitude ${earthquake.properties.mag}`
@@ -27,8 +27,8 @@ class List extends Component
 					} and
 					{
 						earthquake.properties.tsunami ?
-						` a tsunami`
-						: ' no tsunami'
+						' triggered a tsunami'
+						: ' did not trigger a tsunami'
 					}.
 				</li>)
 		});

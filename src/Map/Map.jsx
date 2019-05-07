@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import {Map, Marker, GoogleApiWrapper} from 'google-maps-react';
+import icon from '../earthquake.png';
 
 export class MapContainer extends Component {
 	constructor() {
 		super();
 		this.state = {
-			showingInfoWindow: false,
 			activeMarker: {},
-			selectedPlace: {},
 		};
 	}
 	dropMarker = () =>
@@ -23,11 +22,7 @@ export class MapContainer extends Component {
 					title={myTitle}
 					id={myName}
 					name={myName}
-					// icon={{
-					// 	url: "/path/to/custom_icon.png",
-					// 	anchor: new google.maps.Point(32,32),
-					// 	scaledSize: new google.maps.Size(64,64)
-					// }}
+					icon={icon}
 					position={{lat: earthquake.geometry.coordinates[1], lng: earthquake.geometry.coordinates[0]}}
 				/>
 			);
@@ -43,18 +38,13 @@ export class MapContainer extends Component {
 					style={style}
 					initialCenter={{
             lat: 0,
-            lng: 90
+            lng: 145,
           }}
           zoom={3}
           onClick={this.onMapClicked}> 
 
-        { this.dropMarker() }
-
-        <InfoWindow onClose={this.onInfoWindowClose}>
-            <div>
-              <h1>{this.state.selectedPlace.name}</h1>
-            </div>
-        </InfoWindow>
+				{ this.dropMarker() }
+				
       </Map>
     );
   }
