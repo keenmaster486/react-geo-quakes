@@ -10,7 +10,7 @@ class Map extends Component
 	render()
 	{
 		return(
-			<div>
+			<div class="mapContainer">
 				<h1>HERE IS THE MAP COMPONENT</h1>
 			</div>
 		);
