@@ -31,3 +31,18 @@
     transform: rotate(360deg);
   }
 }
+
+.maps-div {
+  display: flex;
+  /* justify-content: flex-start; */
+  width: 100%;
+  height: 100%;
+}
+
+.quakes-div {
+  display: flex;
+  /* justify-content: flex-end; */
+  margin: 400px 0 0 0;
+  width: 100%;
+  height: 100%;
+}
