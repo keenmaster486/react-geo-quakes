@@ -23,3 +23,15 @@ body {
   padding-right: 2em;
   background-color: pink;
 }
+
+
+.pinContainer
+{
+	height: 500px;
+	width: 750px;
+}
+
+.pin
+{
+	color: red;
+}
