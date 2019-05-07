@@ -14,9 +14,7 @@ class List extends Component
 	quakeListElements()
 	{
 		//Returns list elements from this.state.quakeArray
-
-		if (this.props.quakeArray == [] || !this.props.quakeArray || this.props.quakeArray == undefined || this.props.quakeArray == "") {return false;}
-		//if (this.props.quakeArray == "") {return false;}
+		if (this.props.quakeArray === [] || !this.props.quakeArray || this.props.quakeArray === undefined || this.props.quakeArray === "") {return false;}
 
 		console.log("TEST: " + this.props.quakeArray);
 
@@ -46,8 +44,7 @@ class List extends Component
 	{
 		//console.log("TEST: " + this.props.quakeArray);
 		return(
-			<div className="quakeContainer">
-				<h1>Major earthquakes in the last month:</h1>
+			<div className="quake-container">
 				<ul>
 					{this.quakeListElements()}
 				</ul>

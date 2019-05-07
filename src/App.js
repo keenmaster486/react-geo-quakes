@@ -2,10 +2,9 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import GoogleMapReact from 'google-map-react';
+// import GoogleMapReact from 'google-map-react';
 
-
-import Map from './Map/Map';
+import MapContainer from './Map/Map';
 import List from './List/List';
 
 class App extends Component
@@ -24,7 +23,6 @@ class App extends Component
 	{
 		
 	};
-
 
 	handleAddEarthquakes = async () => {
 		const searchURL = `https://cors-anywhere.herokuapp.com/http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson`;
@@ -49,8 +47,13 @@ class App extends Component
 		return (
 			<div className="App">
 				<h1>react-geo-quakes</h1>
-				<Map quakeArray={this.state.quakeArray}></Map>
-				<List quakeArray={this.state.quakeArray}></List>
+				<div className="maps-div">
+					<MapContainer quakeArray={this.state.quakeArray}></MapContainer>
+				</div>
+				<div className="quakes-div">
+					<h1>Major earthquakes in the last month:</h1>
+					<List quakeArray={this.state.quakeArray}></List>
+				</div>
 			</div>
 		);
 	}
